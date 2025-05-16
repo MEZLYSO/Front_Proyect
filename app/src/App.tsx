@@ -1,16 +1,18 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import useForm from "./hooks/useForm"
 import Login from "./pages/Login"
-import { PublicPages } from "./models/pages"
-
+import Home from "./pages/Home"
 
 function App() {
+
+  const { user, changeName } = useForm()
 
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<div>Home</div>} />
-          <Route path={PublicPages.LOGIN} element={<Login />} />
+          <Route path="/" element={<Login user={user} changeName={changeName} />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>
