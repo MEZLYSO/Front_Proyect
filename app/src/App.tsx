@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import useForm from "./hooks/useForm"
 import Login from "./pages/Login"
-import Home from "./pages/Home"
 
 function App() {
 
@@ -11,8 +10,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login user={user} changeName={changeName} />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Login changeName={changeName} />} />
         </Routes>
       </BrowserRouter>
     </>
