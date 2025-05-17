@@ -1,16 +1,20 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import useForm from "./hooks/useForm"
+import AuthGuard from "./guards/AuthGuard"
 import Login from "./pages/Login"
+import Home from "./pages/Home"
 
 function App() {
-
-  const { user, changeName } = useForm()
 
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login changeName={changeName} />} />
+          <Route>
+            <Route path="/" element={<Login />} />
+          </Route>
+          <Route element={<AuthGuard />}>
+            <Route path="/home" element={<Home />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>

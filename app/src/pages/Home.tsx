@@ -1,14 +1,20 @@
-import useForm from "../hooks/useForm"
+import { useNavigate } from "react-router-dom"
 
 function Home() {
 
-  const { user } = useForm()
+  const navigate = useNavigate()
+  const from = "/"
+
+  const deleteToken = () => {
+    localStorage.clear()
+    navigate(from, { replace: true })
+  }
 
   return (
     <>
-      <h1>{user.name}</h1>
+      <h1>Home</h1>
+      <button onClick={deleteToken}>Close Session</button>
     </>
-
   )
 }
 
