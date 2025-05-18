@@ -4,6 +4,7 @@ import Login from "./pages/Login"
 import Home from "./pages/Home"
 import PublicGuard from "./guards/PublicGuard"
 import NotFoundPage from "./pages/NotFoundPage"
+import SingUp from "./pages/SingUp"
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route element={<PublicGuard />}>
             <Route path="/" element={<Login />} />
+            <Route path="/singup" element={<SingUp />} />
           </Route>
           <Route element={<AuthGuard />}>
             <Route path="/home" element={<Home />} />
