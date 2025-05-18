@@ -1,17 +1,8 @@
-import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useState, useEffect } from "react"
 
 function Home() {
 
-  const navigate = useNavigate()
-  const from = "/"
-
   const [user, setUser] = useState({ name: "" })
-
-  const deleteToken = () => {
-    localStorage.clear()
-    navigate(from, { replace: true })
-  }
 
   useEffect(() => {
     const userData = localStorage.getItem("user")
@@ -20,18 +11,21 @@ function Home() {
 
   return (
     <>
-      <div className="bg-indigo-700 h-dvh flex flex-col items-center gap-2 pt-5 w-dvw pl-5 pr-5">
-        <div className="bg-indigo-100 px-10 py-2 rounded w-full flex justify-between items-center">
-          <h2>Profile</h2>
-          <h1 className="font-bold text-3xl">Welcome {user.name}</h1>
-          <h2></h2>
+      <div className=" px-2 py-1 w-full flex justify-between items-center fixed">
+        <div className="flex justify-between items-center w-full bg-indigo-100 border-2 border-solid rounded-3xl p-2">
+          <h1 className="sm:text-3xl font-bold text-2xl">Welcome {user.name}</h1>
+          <a href="/profile">Profile</a>
         </div>
-        <div className="bg-indigo-100 w-full px-2 rounded py-5">
-          <p>Email: {user.email}</p>
-          <p>Password: {user.password}</p>
+      </div>
+      <div className="bg-indigo-700 h-full flex flex-col items-center gap-2 sm:pt-16 pt-14 pb-5 w-dvw pl-5 pr-5">
+        <div className="bg-indigo-100 w-full px-2 rounded py-5 h-50">
+          DIV
         </div>
-        <div>
-          <button className="bg-indigo-500 text-white px-8 py-6 rounded-2xl" onClick={deleteToken}>Close Session</button>
+        <div className="bg-indigo-100 w-full px-2 rounded py-5 h-200">
+          DIV
+        </div>
+        <div className="bg-indigo-100 w-full px-2 rounded py-5 h-200">
+          DIV
         </div>
       </div>
     </>

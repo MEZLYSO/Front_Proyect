@@ -5,6 +5,7 @@ import Home from "./pages/Home"
 import PublicGuard from "./guards/PublicGuard"
 import NotFoundPage from "./pages/NotFoundPage"
 import SingUp from "./pages/SingUp"
+import Profile from "./pages/Profile"
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           </Route>
           <Route element={<AuthGuard />}>
             <Route path="/home" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
