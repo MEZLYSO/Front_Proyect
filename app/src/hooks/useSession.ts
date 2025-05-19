@@ -20,6 +20,14 @@ const useSession = () => {
     })
   }
 
+
+  const from = "/"
+
+  const deleteToken = () => {
+    localStorage.clear()
+    navigate(from, { replace: true })
+  }
+
   const createToken = async (e: any) => {
     e.preventDefault()
     const user = await fetchUser(valueForm.email)
@@ -32,7 +40,7 @@ const useSession = () => {
     }
   }
 
-  return { createToken, handleChange, validate }
+  return { createToken, deleteToken, handleChange, validate }
 }
 
 export default useSession
