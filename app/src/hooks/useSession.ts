@@ -20,7 +20,6 @@ const useSession = () => {
     })
   }
 
-
   const from = "/"
 
   const deleteToken = () => {
@@ -42,6 +41,5 @@ const useSession = () => {
 
   return { createToken, deleteToken, handleChange, validate }
 }
-
 export default useSession
 
